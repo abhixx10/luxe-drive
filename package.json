@@ -1,0 +1,26 @@
+{
+  "name": "project-9-car-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-ready MERN stack car website foundation with JWT authentication and a premium React UI.",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "dev:client": "npm run dev --workspace client",
+    "dev:server": "npm run dev --workspace server",
+    "build": "npm run build --workspace client",
+    "preview:static": "node scripts/serve-dist.mjs",
+    "verify:visual": "node scripts/verify-visual.mjs",
+    "start": "npm run start --workspace server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "playwright-core": "^1.60.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
